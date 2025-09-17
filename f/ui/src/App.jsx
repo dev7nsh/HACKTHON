@@ -8,39 +8,55 @@ import Header from './pages/Header.jsx'
 import {InteractiveHoverButton} from './component/Button.tsx'
 import { BackgroundLines } from './component/background-lines.jsx'
 import { HoverBorderGradient } from './component/hover-border-gradient.jsx'
+import { Footer } from './component/Footer.js'
 const App = () => {
     return (
         <>
-            {/* Header */}
+                    {/* Header */}
 
-				
-			<Header  />
-		
-      
+                        
+                    <Header  />
+                
+            
 
-            <div className='relative flex flex-row h-screen bg-gradient-to-b from-white via-white to-gray-100 items-center justify-center'>
-  {/* Background lines */}
-  <div className='absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none'>
-    <BackgroundLines />
-  </div>
+                 <div className="flex flex-row w-full h-screen items-center justify-center gap-12">
 
-  {/* Left side */}
-  <div className='flex flex-col flex-1/2 items-center justify-center h-full z-10'>
-    <Hero />
-    <div className='mt-8'>
-      <InteractiveHoverButton   text="Upload Now" />
-    </div>
-  </div>
+                {/* centerred  */}
 
-  {/* Right side */}
-  <div className='flex flex-col flex-1/2 items-center justify-center h-full z-10 space-y-6'>
-    <HoverPlayCard  loop={""} src={"https://www.pexels.com/download/video/33929099/"} />
-  </div>
-</div>
+                <div className='absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none'>
+                    <BackgroundLines />
+                 </div>
 
-            <div className='relative overflow h-screen w-screen'>
+                {/* Left side */}
+                <div className="flex flex-col flex-1 items-center justify-center h-full">
+                    <Hero />
+                    <div className="mt-8">
+                    <InteractiveHoverButton text="Upload Now" />
+                    </div>
+                </div>
+                {/* Right side */}
+                <div className="flex flex-col flex-1 items-center justify-center h-full space-y-6">
+                    <HoverPlayCard loop={true} src="/videos/Trump_and_Navalny_1080p.mp4" />
+                </div>
+             </div>   
+
+             {/* who we doo */}
+
+             <div className='h-screen w-screen px-20 '>
+                 <div className=" right-80 border-b border-gray-300 top-20 left-15 w-80% pb-4 items-center text-xs tracking-[0.25em] font-bold text-black">
+                    What we do 
+                </div>
+
+
+
+             </div>
+
+
+            {/* who we are  */}   
+
+            <div className='relative overflow h-[1000px] w-screen'>
                 <div className="absolute right-80 border-b border-gray-300 top-20 left-15 w-80% pb-4 items-center text-xs tracking-[0.25em] font-bold text-black">
-                    VERIFIABLE AI LAB
+                    What we do 
                 </div>
                 <div className='pl-[600px]'>
                     <ThreeAnimation />
@@ -49,6 +65,15 @@ const App = () => {
                     <Verify />
                 </div>
             </div>
+
+            {/* Footer */}
+
+           <div className="shadow-lg shadow-black/30">
+			
+			<Footer />
+		</div>
+
+           
         </>
     )
 }

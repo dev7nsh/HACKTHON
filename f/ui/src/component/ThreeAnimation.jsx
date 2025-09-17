@@ -63,9 +63,9 @@ const ThreeAnimation = () => {
                 innerLine = new THREE.LineSegments(innerEdges, innerMaterial);
                 scene.add(innerLine);
 
-                const nodeCount = 10000;
+                const nodeCount = 3000;
                 const radius = 2;
-                const nodeGeometry = new THREE.SphereGeometry(0.0025, 8, 8);
+                const nodeGeometry = new THREE.SphereGeometry(0.005, 8, 8);
                 const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, opacity: 0.5, transparent: true });
 
                 for (let i = 0; i < nodeCount; i++) {

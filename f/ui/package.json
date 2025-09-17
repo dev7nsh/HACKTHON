@@ -10,10 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "@react-three/fiber": "^9.3.0",
     "@tailwindcss/vite": "^4.1.13",
+    "class-variance-authority": "^0.7.1",
+    "classnames": "^2.5.1",
+    "framer-motion": "^12.23.13",
+    "lucide-react": "^0.544.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.13"
+    "react-headroom": "^3.2.1",
+    "react-sticky": "^6.0.3",
+    "tailwindcss": "^4.1.13",
+    "three": "^0.180.0",
+    "unicornstudio-react": "^1.4.29-1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

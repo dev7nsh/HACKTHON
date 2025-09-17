@@ -32,15 +32,17 @@ const Verify = () => {
 			<p className='text-lg text-black mb-8 max-w-xl font-sans'>
 				Our platform helps you detect, verify, and report deepfake video and audio — protecting individuals, public figures, and organizations from misinformation and fraud.
 			</p>
-			<div className='flex flex-col gap-2 '>
+			<div className='flex flex-col gap-2'>
 				{sections.map((s, i) => (
 					<div
 						key={i}
-						className='bg-white/20 backdrop-blur-xs rounded-md border border-gray-200 p-6'
+						className='bg-white/20 backdrop-blur-xs rounded-md border border-gray-200 p-6 transition-all duration-500 ease-in-out hover:bg-white/40 hover:shadow-2xl hover:scale-105'
 						style={{
 							border: '1px solid rgba(200,200,200,0.3)',
 							background: 'rgba(255,255,255,0.15)',
-							backgroundClip: 'padding-box'
+							backgroundClip: 'padding-box',
+							borderRadius: "5px",
+							boxShadow: "0 8px 10px 0 rgba(0,0,0,0.18)",
 						}}
 					>
 						<h3 className='text-xl font-medium text-black mb-1'>

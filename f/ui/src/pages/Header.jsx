@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Headroom from "react-headroom";
 
 const Header = () => {
   return (
    
-    <> <Headroom>
-      <header className="w-full bg-white border border-gray-400/40">
+    <> 
+      <header className="w-full bg-white border border-gray-400/40 fixed top-0 left-0 z-50 backdrop-blur-sm">
         <div className="flex h-[60px] items-center justify-between px-6">
           {/* Logo + Name */}
           <div className="flex items-center gap-2">
@@ -41,7 +40,7 @@ const Header = () => {
           </div> */}
         </div>
       </header>
-    </Headroom></>
+    </>
   );
 };
 

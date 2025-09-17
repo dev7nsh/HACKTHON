@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { Button } from "./Button.jsx";
+
 import { Play, Pause } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils.js";
@@ -76,13 +76,7 @@ export default function HoverPlayCard({
             exit={{ opacity: 0 }}
             className="absolute inset-0 flex items-center justify-center bg-black/20"
           >
-            <Button
-              size="icon"
-              variant="ghost"
-              className="bg-black/30 hover:bg-black/50 text-white rounded-full w-16 h-16"
-            >
-              <Pause className="w-8 h-8" />
-            </Button>
+            
           </motion.div>
         )}
       </AnimatePresence>

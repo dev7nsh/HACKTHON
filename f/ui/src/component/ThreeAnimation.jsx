@@ -13,8 +13,8 @@ const ThreeAnimation = () => {
       ref={iframeRef}
       title="3D Animation"
       style={{
-        width: "1100px",
-        height: "1000px",
+        width: "1000px",
+        height: "800px",
         border: "none",
         background: "transparent",
         overflow: "hidden"

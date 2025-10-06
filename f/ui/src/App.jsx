@@ -34,25 +34,6 @@ const App = () => {
           <div className="flex items-center gap-2">
             <div className="font-black text-black text-2xl">DeepFake</div>
           </div>
-          {/* Center Navigation */}
-          <nav className="flex gap-8 text-shadow-gray-400 font-mono text-black">
-            <button className="hover:underline bg-transparent border-none cursor-pointer"
-              onClick={() => handleNavClick("overview")}>
-              Overview
-            </button>
-            <button className="hover:underline bg-transparent border-none cursor-pointer"
-              onClick={() => handleNavClick("who-we-are")}>
-              Who we are
-            </button>
-            <button className="hover:underline bg-transparent border-none cursor-pointer"
-              onClick={() => handleNavClick("what-we-do")}>
-              What we do
-            </button>
-            <button className="hover:underline bg-transparent border-none cursor-pointer"
-              onClick={() => handleNavClick("developer")}>
-              Developers
-            </button>
-          </nav>
         </div>
       </header>
 

@@ -5,12 +5,22 @@ import { cn } from "../lib/utils.js";
 interface InteractiveHoverButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
+  href?: string;
 }
 
 const InteractiveHoverButton = React.forwardRef<
   HTMLButtonElement,
   InteractiveHoverButtonProps
->(({ text = "Button", className, ...props }, ref) => {
+>(({ text = "Button", href, className, ...props }, ref) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (href) {
+      window.location.href = href;
+    }
+    if (props.onClick) {
+      props.onClick(e);
+    }
+  };
+
   return (
     <button
       ref={ref}
@@ -18,6 +28,7 @@ const InteractiveHoverButton = React.forwardRef<
         "group relative w-48 cursor-pointer overflow-hidden rounded-full border bg-background p-2 text-center font-semibold shadow-lg transition-colors duration-300 hover:bg-blue-600 hover:border-blue-600",
         className,
       )}
+      onClick={handleClick}
       {...props}
     >
       <span className="inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">

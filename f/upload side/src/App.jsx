@@ -92,7 +92,18 @@ function Header({ theme, onThemeToggle }) {
       <div className="flex h-[60px] items-center justify-between px-6">
         {/* Logo + Name */}
         <div className="flex items-center gap-2">
-          <div className="deepfake-logo">DeepFake</div>
+          <div
+            className={`deepfake-logo font-extrabold text-2xl tracking-wide select-none ${
+              theme === 'light'
+                ? 'text-gray-900'
+                : 'text-white'
+            }`}
+            style={{
+              textShadow: theme === 'light' ? 'none' : '0 2px 8px rgba(0,0,0,0.25)'
+            }}
+          >
+            DeepFake
+          </div>
         </div>
 
         {/* Right - Theme Toggle & Online Status */}

@@ -79,14 +79,14 @@ const App = () => {
       </header>
 
       {/* overview */}
-      <div ref={overviewRef} id="overview" className="flex flex-row w-full h-screen items-center justify-center gap-12 scroll-mt-20 pt-[60px]">
-        <div className='absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none'>
+      <div ref={overviewRef} id="overview" className="  flex flex-row w-full h-screen items-center justify-center gap-12 scroll-mt-20 pt-[60px]">
+        <div className='  flex items-center justify-center opacity-20 pointer-events-none'>
           <BackgroundLines />
         </div>
         <div className="flex flex-col flex-1 items-center justify-center h-full">
           <Hero />
           <div className="mt-8">
-             <InteractiveHoverButton text="Upload Now" href="https://hackthon-upload.onrender.com" />
+             <InteractiveHoverButton text="Upload Now" href="https://upload.developby.me" />
           </div>
         </div>
         <div className="flex flex-col flex-1 items-center justify-center h-full space-y-6">
@@ -115,8 +115,8 @@ const App = () => {
         </div>
       </div>
 
-         {/* what we do */}
-      <div ref={whatWeDoRef} id="what-we-do" className='relative h-screen w-screen scroll-mt-20 '>
+         
+      <div className='relative h-screen w-screen scroll-mt-20 '>
           <div className="absolute right-80 border-b border-gray-300 top-0 left-15 w-80% pb-4 items-center text-xs tracking-[0.25em] font-bold text-black">
            SIH PPT
            </div>

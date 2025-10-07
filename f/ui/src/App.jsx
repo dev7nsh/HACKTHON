@@ -9,6 +9,10 @@ import { BackgroundLines } from './component/background-lines.jsx'
 import { Footer } from './component/Footer.js'
 import Whatwedo from './pages/Whatwedo.jsx'
 // import Header from './pages/Header.jsx'
+"use client";
+
+import { HoverImageGallery } from "./component/hoverimage";
+
 
 const App = () => {
   // Section refs
@@ -33,6 +37,43 @@ const App = () => {
           {/* Logo + Name */}
           <div className="flex items-center gap-2">
             <div className="font-black text-black text-2xl">DeepFake</div>
+          </div>
+          
+          {/* Navigation Menu */}
+          <nav className="hidden md:flex items-center gap-8">
+            <button 
+              onClick={() => handleNavClick("overview")}
+              className="text-sm font-medium text-gray-700 hover:text-black transition-colors duration-200"
+            >
+              Overview
+            </button>
+            <button 
+              onClick={() => handleNavClick("who-we-are")}
+              className="text-sm font-medium text-gray-700 hover:text-black transition-colors duration-200"
+            >
+              Who We Are
+            </button>
+            <button 
+              onClick={() => handleNavClick("what-we-do")}
+              className="text-sm font-medium text-gray-700 hover:text-black transition-colors duration-200"
+            >
+              What We Do
+            </button>
+            <button 
+              onClick={() => handleNavClick("developer")}
+              className="text-sm font-medium text-gray-700 hover:text-black transition-colors duration-200"
+            >
+              Developer
+            </button>
+          </nav>
+          
+          {/* Mobile menu button (optional) */}
+          <div className="md:hidden">
+            <button className="text-gray-700 hover:text-black">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
       </header>
@@ -74,6 +115,27 @@ const App = () => {
         </div>
       </div>
 
+         {/* what we do */}
+      <div ref={whatWeDoRef} id="what-we-do" className='relative h-screen w-screen scroll-mt-20 '>
+          <div className="absolute right-80 border-b border-gray-300 top-0 left-15 w-80% pb-4 items-center text-xs tracking-[0.25em] font-bold text-black">
+           SIH PPT
+           </div>
+
+
+         <div className="min-h-screen overflow-hidden flex flex-col items-center justify-center">
+      <HoverImageGallery />
+      <p className="mt-10">Hover over the images</p>
+    </div>
+
+      </div>
+
+
+      
+   
+      
+
+      
+
       {/* developer */}
       <div ref={developerRef} id="developer" className="shadow-lg shadow-black/30 scroll-mt-20">
         <Footer />
@@ -83,3 +145,5 @@ const App = () => {
 }
 
 export default App
+
+

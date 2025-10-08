@@ -15,7 +15,7 @@ const Avtartworkdir = () => {
                 },
                 {
                     src: "https://i.ibb.co/QjCH0x3S/1757129400748.jpg",
-                    label: "Pushpendar",
+                    label: "Pushpendra",
                     link: "https://www.linkedin.com/in/pushpendra-saini-/"
                 }, 
                 { src: "./girl.jpg", label:"Bhumika", link: "https://www.linkedin.com/in/bhumika-jangid-b9162b35b/" },

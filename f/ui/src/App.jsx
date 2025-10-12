@@ -86,7 +86,7 @@ const App = () => {
         <div className="flex flex-col flex-1 items-center justify-center h-full">
           <Hero />
           <div className="mt-8">
-             <InteractiveHoverButton text="Upload Now" href="https://upload.developby.me" />
+             <InteractiveHoverButton text="Upload Now" href="https://hackthon-upload.onrender.com" />
           </div>
         </div>
         <div className="flex flex-col flex-1 items-center justify-center h-full space-y-6">

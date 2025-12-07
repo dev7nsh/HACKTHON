@@ -116,7 +116,7 @@ const App = () => {
       </div>
 
          
-      <div className='relative h-screen w-screen scroll-mt-20 '>
+      {/* <div className='relative h-screen w-screen scroll-mt-20 '>
           <div className="absolute right-80 border-b border-gray-300 top-0 left-15 w-80% pb-4 items-center text-xs tracking-[0.25em] font-bold text-black">
            SIH PPT
            </div>
@@ -127,7 +127,7 @@ const App = () => {
       <p className="mt-10">Hover over the images</p>
     </div>
 
-      </div>
+      </div> */}
 
 
       

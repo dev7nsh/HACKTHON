@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 
-@custom-variant dark (&:is(.dark *));components/ui
+@custom-variant dark (&:is(.dark *));
 
 .gidole-regular {
   font-family: "Gidole", sans-serif;
@@ -108,10 +108,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;

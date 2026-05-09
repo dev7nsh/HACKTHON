@@ -28,7 +28,7 @@ const StudentCertification = () => {
   const [isDownloading, setIsDownloading] = React.useState(false);
 
   React.useEffect(() => {
-    fetch(`http://localhost:3001/api/certificates/${studentId}`)
+    fetch(`https://hackthon-i65o.vercel.app/api/certificates/${studentId}`)
       .then(res => {
         if (!res.ok) throw new Error('Not found');
         return res.json();

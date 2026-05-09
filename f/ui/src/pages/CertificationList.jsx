@@ -7,7 +7,7 @@ const CertificationList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/certificates')
+    fetch('https://hackthon-i65o.vercel.app/api/certificates')
       .then(res => res.json())
       .then(data => {
         setStudentData(data);

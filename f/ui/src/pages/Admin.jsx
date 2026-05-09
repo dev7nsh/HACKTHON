@@ -43,7 +43,7 @@ const Admin = () => {
     setStatus({ loading: true, success: false, error: null, newId: null });
     
     try {
-      const response = await fetch('https://hackthon-i65o.vercel.app/api/certificates', {
+      const response = await fetch('https://hackthon-three-delta.vercel.app/api/certificates', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

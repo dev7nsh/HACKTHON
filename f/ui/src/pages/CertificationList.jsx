@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import studentData from '../lib/studentData.json';
 import { BackgroundLines } from '../component/background-lines';
 
 const CertificationList = () => {
-  const [studentData, setStudentData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('https://hackthon-three-delta.vercel.app/api/certificates')
-      .then(res => res.json())
-      .then(data => {
-        setStudentData(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Failed to fetch certificates:', err);
-        setLoading(false);
-      });
-  }, []);
-
   return (
     <div className="min-h-screen bg-neutral-50 flex flex-col relative w-full overflow-hidden pt-20">
       {/* Background decoration */}
@@ -55,10 +40,7 @@ const CertificationList = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {loading ? (
-            <p className="text-center text-gray-500 col-span-full">Loading certificates...</p>
-          ) : (
-            studentData.map((student) => (
+          {studentData.map((student) => (
             <div 
               key={student.id} 
               className="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full"
@@ -94,7 +76,7 @@ const CertificationList = () => {
                 </svg>
               </Link>
             </div>
-          )))}
+          ))}
         </div>
       </main>
     </div>

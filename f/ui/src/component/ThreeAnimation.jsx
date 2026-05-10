@@ -9,15 +9,17 @@ const ThreeAnimation = () => {
   }, []);
 
   return (
+    <div style={{ width: "100%", maxWidth: "700px" }}>
     <iframe
       ref={iframeRef}
       title="3D Animation"
       style={{
-        width: "1000px",
-        height: "800px",
+        width: "100%",
+        height: "700px",
         border: "none",
         background: "transparent",
-        overflow: "hidden"
+        overflow: "hidden",
+        display: "block"
       }}
       srcDoc={`
         <html>
@@ -93,11 +95,11 @@ const ThreeAnimation = () => {
 
               function animate() {
                 requestAnimationFrame(animate);
-                time += 0.002;
+                time += 0.0005;
 
-                scene.rotation.y += 0.002;
-                scene.rotation.x += 0.002;
-                scene.rotation.z += 0.002;
+                scene.rotation.y += 0.0004;
+                scene.rotation.x += 0.0003;
+                scene.rotation.z += 0.0002;
 
                 nodes.forEach((nodeObj) => {
                   let pos = nodeObj.mesh.position;
@@ -105,9 +107,9 @@ const ThreeAnimation = () => {
                   const ny = simplex.noise4D(pos.y * 0.5, pos.z * 0.5, pos.x * 0.5, time);
                   const nz = simplex.noise4D(pos.z * 0.5, pos.x * 0.5, pos.y * 0.5, time);
 
-                  pos.x += nx * 0.002;
-                  pos.y += ny * 0.002;
-                  pos.z += nz * 0.002;
+                  pos.x += nx * 0.0006;
+                  pos.y += ny * 0.0006;
+                  pos.z += nz * 0.0006;
 
                   const maxRadius = 1.75;
                   const len = Math.sqrt(pos.x * pos.x + pos.y * pos.y + pos.z * pos.z);
@@ -125,6 +127,7 @@ const ThreeAnimation = () => {
         </html>
       `}
     />
+    </div>
   );
 };
 

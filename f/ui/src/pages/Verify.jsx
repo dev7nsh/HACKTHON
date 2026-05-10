@@ -24,12 +24,11 @@ const Verify = () => {
         
 
         
-		<div className='flex-1 h-screen scale-85'>
-            
-			<h2 className='text-3xl md:text-5xl font-light text-black mb-4 leading-tight ' >
-				 Authenticity in the<br/> Age of AI Deepfakes
+		<div className='flex-1 py-10 md:py-0'>
+			<h2 className='text-3xl md:text-5xl font-bold text-black mb-6 leading-tight' >
+				 Authenticity in the<br className="hidden md:block" /> Age of AI Deepfakes
 			</h2>
-			<p className='text-lg text-black mb-8 max-w-xl font-sans'>
+			<p className='text-base md:text-lg text-gray-700 mb-8 max-w-2xl font-sans leading-relaxed'>
 				Our platform helps you detect, verify, and report deepfake video and audio — protecting individuals, public figures, and organizations from misinformation and fraud.
 			</p>
 			<div className='flex flex-col gap-2'>

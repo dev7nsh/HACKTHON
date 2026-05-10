@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import QRCode from 'react-qr-code';
 import * as htmlToImage from 'html-to-image';
-import studentData from '../lib/studentData.json';
+import { fetchCertificate } from '../lib/supabase';
 
 /* ── helpers ── */
 const formatDate = (s) => {
+  if (!s) return '';
   const d = new Date(s);
   return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`;
 };
 const shortDate = (s) => {
+  if (!s) return '';
   const d = new Date(s);
   return `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`;
 };
@@ -22,16 +24,39 @@ const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 /* ══════════════════════════════════════════════════════════ */
 const StudentCertification = () => {
   const { studentId } = useParams();
-  const student = studentData.find((s) => s.id === studentId);
+  const [student, setStudent] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const certificateRef = React.useRef(null);
-  const [isDownloading, setIsDownloading] = React.useState(false);
+  const certificateRef = useRef(null);
+  const [isDownloading, setIsDownloading] = useState(false);
 
-  if (!student) {
+  useEffect(() => {
+    fetchCertificate(studentId)
+      .then(setStudent)
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, [studentId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-neutral-50">
+        <div className="flex flex-col items-center gap-4">
+          <svg className="animate-spin h-8 w-8 text-[#1e3a6e]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <p className="text-gray-500 font-medium">Verifying certificate...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !student) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-neutral-50 flex-col gap-4">
         <h1 className="text-3xl font-bold text-gray-900">Certificate Not Found</h1>
-        <p className="text-gray-500">The requested certification record does not exist.</p>
+        <p className="text-gray-500">{error || 'The requested certification record does not exist.'}</p>
         <Link to="/Certification" className="mt-4 px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
           Return to Verifications
         </Link>

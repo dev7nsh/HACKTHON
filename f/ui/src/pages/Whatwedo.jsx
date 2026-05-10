@@ -6,34 +6,30 @@ import { Pointerlink } from '../component/pointerwlink.jsx';
 const Whatwedo = () => {
   return (
     <>
-    <div className='h-screen pt-20'>
-        {/* top */}
-
-        <div className='border border-transparent shadow-lg shadow-black/10 rounded-xl bg-white pt-5 flex flex-row gap-50 items-center pl-60 '>
+    <div className='w-full py-4 sm:py-10 space-y-6 sm:space-y-10'>
+        {/* top card */}
+        <div className='border border-gray-100 shadow-xl rounded-2xl bg-white p-5 sm:p-8 md:p-10 flex flex-col sm:flex-row gap-8 sm:gap-12 items-center justify-center'>
             {/* left */}
-            <div className='w-2xs scale-150  '>
+            <div className='w-full max-w-xs sm:max-w-sm'>
                 <PointerHighlightDemo />
             </div>
             {/* right */}
-
-            <div className='h-full space-y-5 scale-75 '>
+            <div className='w-full max-w-sm'>
                 <HoverPlayCard loop={true} src="/videos/trevor_sesli.mp4" />
             </div>
-
         </div>
 
-        {/* bottom */}
-        <div className='h-1/3 mt-20 border border-transparent shadow-lg shadow-black/10 rounded-xl bg-white  flex flex-row items-center gap-100'>
+        {/* bottom card */}
+        <div className='border border-gray-100 shadow-xl rounded-2xl bg-white flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 p-5 sm:p-8 md:p-10'>
           {/* left */}
-          <div className='pl-40'>
+          <div className='w-full max-w-md'>
             <GoogleSearchBoxDemo />
           </div>
           {/* right */}
-          <div className='w-2xs scale-150'>
+          <div className='w-full max-w-xs'>
             <Pointerlink />
           </div>
         </div>
-
     </div>
     
     </>

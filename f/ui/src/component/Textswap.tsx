@@ -28,8 +28,8 @@ function Hero() {
           <div>
             
           </div>
-          <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
+          <div className="flex gap-3 sm:gap-4 flex-col px-2 sm:px-0">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
               <span className="text-spektr-cyan-50">Deepfakes</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
@@ -41,14 +41,8 @@ function Hero() {
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
                       titleNumber === index
-                        ? {
-                            y: 0,
-                            opacity: 1,
-                          }
-                        : {
-                            y: titleNumber > index ? -150 : 150,
-                            opacity: 0,
-                          }
+                        ? { y: 0, opacity: 1 }
+                        : { y: titleNumber > index ? -150 : 150, opacity: 0 }
                     }
                   >
                     {title}
@@ -57,7 +51,7 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center px-2 sm:px-0">
             AI deepfakes by verifying the authenticity of videos and audio, with a chatbot that detects fakes and helps report cases to cybersecurity cells. While we focus on protecting public speakers, we also aim to help the general public by enabling them to verify viral content, avoid scams using fake voices, and learn to spot deepfakes in everyday life.
             </p>
           </div>

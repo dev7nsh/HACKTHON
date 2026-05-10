@@ -16,22 +16,6 @@
         padding: 0;
         font-family: 'Gidole', sans-serif;
       }
-      /* Prevent app from opening on small devices */
-      @media (max-width: 900px) {
-        body > #root {
-          display: none !important;
-        }
-        body::before {
-          content: "This app is not available on small devices.";
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          font-size: 1.5rem;
-          color: #222;
-          background: #fff;
-        }
-      }
     </style>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');

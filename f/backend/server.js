@@ -39,40 +39,40 @@ const requireAdmin = (req, res, next) => {
 
 // ── Helper: map DB row (snake_case) → API object (camelCase) ──────────────
 const toApi = (row) => ({
-  id:            row.id,
+  id: row.id,
   certificateId: row.certificate_id,
-  issueDate:     row.issue_date,
-  name:          row.name,
-  fathersName:   row.fathers_name,
-  course:        row.course,
-  semester:      row.semester,
-  rollNo:        row.roll_no,
-  college:       row.college,
-  academicYear:  row.academic_year,
-  companyName:   row.company_name,
-  startDate:     row.start_date,
-  endDate:       row.end_date,
-  grade:         row.grade,
-  instructor:    row.instructor,
-  description:   row.description,
-  createdAt:     row.created_at,
+  issueDate: row.issue_date,
+  name: row.name,
+  fathersName: row.fathers_name,
+  course: row.course,
+  semester: row.semester,
+  rollNo: row.roll_no,
+  college: row.college,
+  academicYear: row.academic_year,
+  companyName: row.company_name,
+  startDate: row.start_date,
+  endDate: row.end_date,
+  grade: row.grade,
+  instructor: row.instructor,
+  description: row.description,
+  createdAt: row.created_at,
 });
 
 // ── Helper: map API body (camelCase) → DB row (snake_case) ────────────────
 const toDb = (body) => ({
-  name:          body.name,
-  fathers_name:  body.fathersName,
-  course:        body.course,
-  semester:      body.semester,
-  roll_no:       body.rollNo,
-  college:       body.college,
+  name: body.name,
+  fathers_name: body.fathersName,
+  course: body.course,
+  semester: body.semester,
+  roll_no: body.rollNo,
+  college: body.college,
   academic_year: body.academicYear,
-  company_name:  body.companyName,
-  start_date:    body.startDate   || null,
-  end_date:      body.endDate     || null,
-  grade:         body.grade,
-  instructor:    body.instructor,
-  description:   body.description,
+  company_name: body.companyName,
+  start_date: body.startDate || null,
+  end_date: body.endDate || null,
+  grade: body.grade,
+  instructor: body.instructor,
+  description: body.description,
 });
 
 // ─────────────────────────────────────────────────────────────────────────
@@ -80,15 +80,15 @@ const toDb = (body) => ({
 // ─────────────────────────────────────────────────────────────────────────
 
 // GET all certificates
-app.get('/api/certificates', async (req, res) => {
-  const { data, error } = await supabase
-    .from('certificates')
-    .select('*')
-    .order('created_at', { ascending: false });
+//app.get('/api/certificates', async (req, res) => {
+//  const { data, error } = await supabase
+//    .from('certificates')
+//    .select('*')
+//    .order('created_at', { ascending: false });
 
-  if (error) return res.status(500).json({ error: error.message });
-  res.json(data.map(toApi));
-});
+//  if (error) return res.status(500).json({ error: error.message });
+//  res.json(data.map(toApi));
+//});
 
 // GET single certificate by ID
 app.get('/api/certificates/:id', async (req, res) => {
@@ -109,7 +109,7 @@ app.post('/api/certificates', requireAdmin, async (req, res) => {
 
   const newRecord = {
     certificate_id: `CERT-${year}-${rand}`,
-    issue_date:     new Date().toISOString().split('T')[0],
+    issue_date: new Date().toISOString().split('T')[0],
     ...toDb(req.body),
   };
 

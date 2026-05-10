@@ -13,7 +13,7 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON);
 // for mutations; use the backend endpoints so the admin password is checked.
 // ─────────────────────────────────────────────────────────────────────────
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://hackthon-two-sage.vercel.app';
 
 /**
  * Fetch all certificates (public)

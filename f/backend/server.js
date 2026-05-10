@@ -24,7 +24,25 @@ const supabase = createClient(
 );
 
 // ── Middleware ─────────────────────────────────────────────────────────────
-app.use(cors());
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:3000'
+].filter(Boolean);
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin) || (process.env.FRONTEND_URL && origin.includes(process.env.FRONTEND_URL))) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS policy violation: API is only accessible from the frontend website.'));
+    }
+  }
+}));
 app.use(express.json());
 
 // ── Auth helper ───────────────────────────────────────────────────────────
@@ -80,15 +98,15 @@ const toDb = (body) => ({
 // ─────────────────────────────────────────────────────────────────────────
 
 // GET all certificates
-//app.get('/api/certificates', async (req, res) => {
-//  const { data, error } = await supabase
-//    .from('certificates')
-//    .select('*')
-//    .order('created_at', { ascending: false });
+app.get('/api/certificates', async (req, res) => {
+  const { data, error } = await supabase
+    .from('certificates')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-//  if (error) return res.status(500).json({ error: error.message });
-//  res.json(data.map(toApi));
-//});
+  if (error) return res.status(500).json({ error: error.message });
+  res.json(data.map(toApi));
+});
 
 // GET single certificate by ID
 app.get('/api/certificates/:id', async (req, res) => {

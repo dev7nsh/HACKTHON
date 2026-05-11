@@ -19,9 +19,19 @@ const formFields = [
 ];
 
 const emptyForm = {
-  name: '', fathersName: '', course: '', semester: '', rollNo: '',
-  college: '', academicYear: '', companyName: 'developeby.me',
-  startDate: '', endDate: '', grade: '', instructor: '', description: '',
+  name: 'John Doe',
+  fathersName: 'Mr. Richard Doe',
+  course: 'Bachelor of Computer Applications (BCA)',
+  semester: 'V Semester',
+  rollNo: '2025BCA104',
+  college: 'Poddar International College',
+  academicYear: '2024-25',
+  companyName: 'developeby.me',
+  startDate: '2024-01-01',
+  endDate: '2024-06-30',
+  grade: 'A+',
+  instructor: 'Devansh Sharma',
+  description: 'For successfully completing the comprehensive course on React and Modern Web Development.',
 };
 
 // ── Input style ───────────────────────────────────────────────────────────

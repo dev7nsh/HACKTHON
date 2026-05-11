@@ -162,23 +162,23 @@ const StudentCertification = () => {
             {/* ── Premium Completion Highlight Card ── */}
             <motion.div
               variants={fadeUp}
-              className="relative mb-6 rounded-2xl overflow-hidden"
+              className="relative mb-6 rounded-2xl overflow-hidden border border-gray-100"
               style={{
-                background: 'linear-gradient(135deg, #0f2557 0%, #1a3d8f 45%, #1e56c8 100%)',
-                boxShadow: '0 8px 40px rgba(26,86,219,0.35), 0 2px 12px rgba(0,0,0,0.18)',
+                background: '#ffffff',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.03)',
               }}
             >
               {/* Shimmer overlay */}
               <div
                 style={{
                   position: 'absolute', inset: 0, pointerEvents: 'none',
-                  background: 'linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%)',
+                  background: 'linear-gradient(120deg, transparent 30%, rgba(0,0,0,0.02) 50%, transparent 70%)',
                   animation: 'shimmer 3s infinite linear',
                 }}
               />
 
               {/* Top accent bar */}
-              <div style={{ height: '3px', background: 'linear-gradient(90deg, #60a5fa, #a78bfa, #34d399)', borderRadius: '2px 2px 0 0' }} />
+              <div style={{ height: '3px', background: 'linear-gradient(90deg, #3b82f6, #8b5cf6, #10b981)', borderRadius: '2px 2px 0 0' }} />
 
               <div className="p-5">
                 {/* Header row: avatar + verified badge */}
@@ -187,21 +187,20 @@ const StudentCertification = () => {
                     {/* Avatar circle */}
                     <div style={{
                       width: '44px', height: '44px', borderRadius: '50%',
-                      background: 'rgba(255,255,255,0.12)',
-                      border: '2px solid rgba(255,255,255,0.25)',
+                      background: '#f8fafc',
+                      border: '1px solid #e2e8f0',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      backdropFilter: 'blur(6px)',
                     }}>
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                         <circle cx="12" cy="7" r="4" />
                       </svg>
                     </div>
                     <div>
-                      <p style={{ fontSize: '15px', fontWeight: 700, color: '#fff', lineHeight: 1.2 }}>
+                      <p style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', lineHeight: 1.2 }}>
                         {student.name}
                       </p>
-                      <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.55)', marginTop: '2px' }}>
+                      <p style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>
                         {shortDate(student.endDate)}
                       </p>
                     </div>
@@ -210,31 +209,30 @@ const StudentCertification = () => {
                   {/* Verified badge */}
                   <div style={{
                     display: 'flex', alignItems: 'center', gap: '5px',
-                    background: 'rgba(52,211,153,0.18)',
-                    border: '1px solid rgba(52,211,153,0.45)',
+                    background: 'rgba(16,185,129,0.08)',
+                    border: '1px solid rgba(16,185,129,0.2)',
                     borderRadius: '999px', padding: '4px 10px',
-                    backdropFilter: 'blur(6px)',
                   }}>
                     <svg width="13" height="13" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="12" fill="#34d399" />
+                      <circle cx="12" cy="12" r="12" fill="#10b981" />
                       <path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#34d399', letterSpacing: '0.04em' }}>VERIFIED</span>
+                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#059669', letterSpacing: '0.04em' }}>VERIFIED</span>
                   </div>
                 </div>
 
                 {/* "Completed by" row */}
                 <div style={{
                   display: 'flex', alignItems: 'center', gap: '7px',
-                  background: 'rgba(255,255,255,0.09)',
+                  background: '#f8fafc',
                   borderRadius: '10px', padding: '9px 12px', marginBottom: '14px',
-                  border: '1px solid rgba(255,255,255,0.13)',
+                  border: '1px solid #e2e8f0',
                 }}>
                   <svg width="16" height="16" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="12" fill="#60a5fa" />
+                    <circle cx="12" cy="12" r="12" fill="#3b82f6" />
                     <path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#fff' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#1e293b' }}>
                     Completed by {student.name}
                   </span>
                 </div>
@@ -243,18 +241,18 @@ const StudentCertification = () => {
                 <div style={{ display: 'flex', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
                   <span style={{
                     fontSize: '11px', fontWeight: 600,
-                    color: '#a5b4fc', letterSpacing: '0.05em',
-                    background: 'rgba(165,180,252,0.12)',
-                    border: '1px solid rgba(165,180,252,0.3)',
+                    color: '#4338ca', letterSpacing: '0.05em',
+                    background: '#eef2ff',
+                    border: '1px solid #c7d2fe',
                     borderRadius: '999px', padding: '3px 10px',
                   }}>
                     🖥️ Virtual Internship
                   </span>
                   <span style={{
                     fontSize: '11px', fontWeight: 600,
-                    color: '#86efac', letterSpacing: '0.05em',
-                    background: 'rgba(134,239,172,0.12)',
-                    border: '1px solid rgba(134,239,172,0.3)',
+                    color: '#15803d', letterSpacing: '0.05em',
+                    background: '#f0fdf4',
+                    border: '1px solid #bbf7d0',
                     borderRadius: '999px', padding: '3px 10px',
                   }}>
                     ⏱️ Minimum 120 hours
@@ -262,21 +260,21 @@ const StudentCertification = () => {
                 </div>
 
                 {/* Divider */}
-                <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', marginBottom: '14px' }} />
+                <div style={{ height: '1px', background: '#f1f5f9', marginBottom: '14px' }} />
 
                 {/* Verification statement */}
-                <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.72)', lineHeight: 1.75 }}>
-                  <span style={{ fontWeight: 700, color: '#fff' }}>{student.name}'s</span> internship certificate
+                <p style={{ fontSize: '13px', color: '#4b5563', lineHeight: 1.75 }}>
+                  <span style={{ fontWeight: 700, color: '#0f172a' }}>{student.name}'s</span> internship certificate
                   is verified.{' '}
                   <span style={{
-                    color: '#93c5fd', fontWeight: 600,
-                    borderBottom: '1px solid rgba(147,197,253,0.4)',
+                    color: '#2563eb', fontWeight: 600,
+                    borderBottom: '1px solid rgba(37,99,235,0.2)',
                     cursor: 'pointer', paddingBottom: '1px',
                   }}>
                     developeby.me
                   </span>{' '}
                   certifies their successful completion of the{' '}
-                  <span style={{ fontWeight: 600, color: '#fff' }}>{student.course}</span> internship.
+                  <span style={{ fontWeight: 600, color: '#0f172a' }}>{student.course}</span> internship.
                 </p>
               </div>
 

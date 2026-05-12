@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const Header = () => {
   return (
-   
-    <> 
+
+    <>
       <header className="w-full bg-white border border-gray-400/40 fixed top-0 left-0 z-50 backdrop-blur-sm">
         <div className="flex h-[60px] items-center justify-between px-6">
           {/* Logo + Name */}
@@ -11,7 +11,7 @@ const Header = () => {
             {/* <div className="w-8">
               <img src="src/assets/Z (1).png" alt="Logo" />
             </div> */}
-            <div className="font-black text-black text-2xl">DeepFake</div>
+            <div className="font-black text-black text-2xl">Developby</div>
           </div>
 
           {/* Center Navigation */}
@@ -46,19 +46,19 @@ const Header = () => {
 
 
 
-       
 
 
-        
-        
-
-    
-       
-        
-        
 
 
-        
+
+
+
+
+
+
+
+
+
 
 
 export default Header;

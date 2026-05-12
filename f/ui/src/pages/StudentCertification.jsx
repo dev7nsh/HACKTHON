@@ -113,7 +113,7 @@ const StudentCertification = () => {
         <div className="flex h-[60px] items-center justify-between px-6">
           {/* Logo + Name */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="font-black text-black text-2xl">DeepFake</div>
+            <div className="font-black text-black text-2xl">Developby</div>
           </Link>
 
           {/* Navigation Menu */}

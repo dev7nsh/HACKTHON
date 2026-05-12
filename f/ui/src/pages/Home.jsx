@@ -41,7 +41,7 @@ export default function Home() {
 
           {/* Logo */}
           <div className="font-black text-black text-xl sm:text-2xl tracking-tighter shrink-0">
-            DeepFake
+            Developby
           </div>
 
           {/* Desktop nav */}

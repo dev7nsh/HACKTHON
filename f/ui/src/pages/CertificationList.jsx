@@ -26,7 +26,7 @@ const CertificationList = () => {
       <header className="w-full bg-white/80 border-b border-gray-200/50 fixed top-0 left-0 z-50 backdrop-blur-md">
         <div className="flex h-[60px] items-center justify-between px-6">
           <Link to="/" className="flex items-center gap-2">
-            <div className="font-black text-black text-2xl tracking-tight">DeepFake</div>
+            <div className="font-black text-black text-2xl tracking-tight">Developby</div>
           </Link>
           <nav className="flex items-center gap-8">
             <Link to="/" className="text-sm font-medium text-gray-600 hover:text-black transition-colors duration-200">

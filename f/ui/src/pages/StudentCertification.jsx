@@ -71,7 +71,7 @@ const StudentCertification = () => {
     { label: 'END DATE', value: shortDate(student.endDate) },
     { label: 'ACADEMIC YEAR', value: student.academicYear },
     { label: 'ROLL NO.', value: student.rollNo },
-    { label: 'ISSUED BY', value: `${student.instructor} · Director` },
+    { label: 'ISSUED BY', value: `Devesh · Director` },
     { label: 'ISSUE DATE', value: shortDate(student.issueDate) },
   ];
 
@@ -337,7 +337,7 @@ const StudentCertification = () => {
                 className="bg-white shadow-[0_4px_24px_rgba(0,0,0,0.10)] rounded-sm overflow-hidden w-full min-w-[800px] lg:min-w-0 flex flex-col relative aspect-[1.41/1]"
                 style={{ backgroundImage: `url('/certificate-bg.png')`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
               >
-                <div className="scale-80  flex-1 flex flex-col relative z-10 items-center justify-center text-center">
+                <div className="scale-[0.70] flex-1 flex flex-col relative z-10 items-center justify-center text-center">
                   {/* Logo */}
                   <div className="flex flex-col items-center gap-1.5 mb-4">
                     <div className="w-12 h-12 flex items-center justify-center mb-1 overflow-hidden rounded-xl">
@@ -391,9 +391,9 @@ const StudentCertification = () => {
                     <div className="flex flex-col items-center gap-1.5">
                       <div
                         style={{
-                          width: '64px',
-                          height: '64px',
-                          padding: '5px',
+                          width: '90px',
+                          height: '90px',
+                          padding: '8px',
                           background: '#fff',
                           borderRadius: '10px',
                           border: '2px solid #1e3a6e',
@@ -401,18 +401,8 @@ const StudentCertification = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          filter: 'url(#rounded-corners)',
                         }}
                       >
-                        <svg width="0" height="0" style={{ position: 'absolute' }}>
-                          <defs>
-                            <filter id="rounded-corners" x="-50%" y="-50%" width="200%" height="200%" colorInterpolationFilters="sRGB">
-                              <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur" />
-                              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="rounded" />
-                              <feComposite in="SourceGraphic" in2="rounded" operator="atop" />
-                            </filter>
-                          </defs>
-                        </svg>
                         <QRCode
                           value={window.location.href}
                           level="H"
@@ -461,7 +451,7 @@ const StudentCertification = () => {
                       </div>
                       <div className="w-[110px] h-[1px] bg-gray-400 mt-1" />
                       <p className="text-[9px] font-semibold text-gray-600 text-center leading-tight">
-                        {student.instructor}<br />
+                        Devesh<br />
                         <span className="font-normal text-gray-400">Director, developeby.me</span>
                       </p>
                     </div>

@@ -15,7 +15,7 @@ const formFields = [
   { label: 'Start Date',        name: 'startDate',    type: 'date' },
   { label: 'End Date',          name: 'endDate',      type: 'date' },
   { label: 'Grade',             name: 'grade',        type: 'text', placeholder: 'e.g. A+' },
-  { label: 'Instructor Name',   name: 'instructor',   type: 'text', placeholder: 'e.g. Devansh Sharma' },
+  { label: 'Instructor Name',   name: 'instructor',   type: 'text', placeholder: 'e.g. Devesh Sharma' },
 ];
 
 const emptyForm = {
@@ -30,7 +30,7 @@ const emptyForm = {
   startDate: '2024-01-01',
   endDate: '2024-06-30',
   grade: 'A+',
-  instructor: 'Devansh Sharma',
+  instructor: 'Devesh Sharma',
   description: 'For successfully completing the comprehensive course on React and Modern Web Development.',
 };
 
